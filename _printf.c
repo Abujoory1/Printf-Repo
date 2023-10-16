@@ -17,42 +17,7 @@ int _printf(const char *format, ...)
 
 	    va_start(args, format);
 
-	    while (*format)
-	    {
-		   if (*format != '%')
-		    {
-			    _putchar(*format);
-			    count++;
-			    format++;
-		    }
-		   else
-		   { 
-			   format++;
-			   if (*format == 'c')
-			   {
-				   count += printf_char(args);
-				   format++;
-			   }
-			   else if (*format == 's')
-			   {
-				   count += printf_string(args);
-				   format++;
-			   }
-			   else if (*format == '%')
-			   {
-				   _putchar('%');
-				   count++;
-				   format++;
-			   }
-			   else 
-			   {
-				   _putchar('%');
-				   _putchar(*format);
-				   count += 2;
-				   format++;
-			   }
-		   }
-	    }
+	    printf_helper(format, args);
 	    va_end(args);
 	    return (count);
 }

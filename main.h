@@ -4,6 +4,7 @@
 #define MAIN_H
 
 int _printf(const char *format, ...);
+void printf_helper(const char *format, va_list args);
 int printf_string(va_list val);
 int printf_char(va_list val);
 int _strlen(char *s);
