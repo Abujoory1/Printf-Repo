@@ -40,13 +40,13 @@ int _printf(const char *format, ...)
 			   }
 			   else if (*format == '%')
 			   {
-				   printf_percentage();
+				   _putchar('%');
 				   count++;
 				   format++;
 			   }
 			   else 
 			   {
-				   printf_percentage();
+				   _putchar('%');
 				   _putchar(*format);
 				   count += 2;
 				   format++;
