@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	    va_start(args, format);
 
 	    printf_helper(format, args);
+	    
 	    va_end(args);
 	    return (count);
 }
