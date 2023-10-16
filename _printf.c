@@ -9,37 +9,49 @@ int _printf(const char *format, ...)
 {
 	    int count = 0;
 	    va_list args;
+
+	    if (format == NULL)
+	    {
+		    return (-1);
+	    }
+
 	    va_start(args, format);
 
-	    while (*format != '\0')
+	    while (*format)
 	    {
-		    if (*format == '%')
+		   if (*format != '%')
 		    {
-			    switch (*++format)
-			    {
-				    case 'c':
-					    count += _putchar((char) va_arg(args, int));
-					    break;
-				    case 's':
-					    {
-						    char *str = va_arg(args, char *);
-						    while (*str)
-						    {
-							    count += _putchar(*str++);
-						    }
-					    }
-					    break;
-				    case '%':
-					    count += _putchar('%');
-					    break;
-				    default:
-					    break;
-			    }
-		    } else 
-		    {
-			    count += _putchar(*format);
+			    _putchar(*format);
+			    count++;
+			    format++;
 		    }
-		    format++;
+		   else
+		   { 
+			   format++;
+			   if (*format == 'c')
+			   {
+				   count += printf_char(args);
+				   format++;
+			   }
+			   else if (*format == 's')
+			   {
+				   count += printf_string(args);
+				   format++;
+			   }
+			   else if (*format == '%')
+			   {
+				   printf_percentage();
+				   count++;
+				   format++;
+			   }
+			   else 
+			   {
+				   printf_percentage();
+				   _putchar(*format);
+				   count += 2;
+				   format++;
+			   }
+		   }
 	    }
 	    va_end(args);
 	    return (count);
