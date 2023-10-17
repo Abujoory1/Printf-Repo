@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int count = 0;
+	int count = 0;
 	op_fun_t function_format_list[] = {
 		{"%", print_percentage},
 		{"c", printf_char},
