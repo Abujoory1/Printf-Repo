@@ -14,8 +14,6 @@ int _printf(const char *format, ...)
 		{"%", print_percentage},
 		{"c", printf_char},
 		{"s", printf_string},
-		{"d", printf_integer},
-		{"i", printf_integer},
 		{NULL, NULL},
 	};
 	va_list args_list;
