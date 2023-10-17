@@ -8,7 +8,7 @@
  * Return: A total length of character.
  */
 
-int printf_helper(const char *format, operator_func_t f_list[], va_list arg_list)
+int printf_helper(const char *format, op_fun_t f_list[], va_list arg_list)
 {
 	int i, j, r_val, count;
 
