@@ -1,2 +1,2 @@
-# Printf-Repo 1 
-  - this is our first project 
+# Printf Project
+  - this is our first project
