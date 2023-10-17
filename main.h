@@ -35,4 +35,7 @@ int _strlen(char *s);
 int _strlenc(const char *s);
 int _putchar(char c);
 int print_percentage(va_list);
+
+int printf_integer(va_list);
+int printf_number(va_list args);
 #endif
