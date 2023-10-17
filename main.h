@@ -37,5 +37,6 @@ int _putchar(char c);
 int print_percentage(va_list);
 int printf_integer(va_list);
 int printf_number(va_list args);
+int print_bin(va_list val);
 
 #endif
