@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
- * pritnf_percentage - print percentage.
- * Return: 1.
+ * print_percent - Prints a percent symbol
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
  */
-int printf_percentage(void)
+int print_percentage(__attribute__((unused))va_list list)
 {
-	_putchar(37);
+	_putchar('%');
 	return (1);
 }

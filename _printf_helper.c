@@ -1,28 +1,51 @@
 #include "main.h"
 
 /**
- * printf_helper - Printf Helper is help function for printf.
- * @format: argument pointer.
- * @args: argument list with varidict.
- * Return: 0
+ * printf_helper - Receives the function and foramter from printf.
+ * @format: A string containing all the desired characters.
+ * @f_list: A list of all the posible functions.
+ * @arg_list: A list containing all the argumentents.
+ * Return: A total length of character.
  */
 
-void printf_helper(const char *format, va_list args)
+int printf_helper(const char *format, operator_func_t f_list[], va_list arg_list)
 {
-	int count = 0;
+	int i, j, r_val, count;
 
-	while (*format)
+	count = 0;
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (*format != '%')
+		if (format[i] == '%')
 		{
-			_putchar(*format);
-			count++;
+			for (j = 0; f_list[j].op != NULL; j++)
+			{
+				if (format[i + 1] == f_list[j].op[0])
+				{
+					r_val = f_list[j].fun(arg_list);
+					if (r_val == -1)
+						return (-1);
+					count += r_val;
+					break;
+				}
+			}
+			if (f_list[j].op == NULL && format[i + 1] != ' ')
+			{
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count = count + 2;
+				}
+				else
+					return (-1);
+			}
+			i = i + 1;
 		}
 		else
 		{
-			format++;
-			_printf_helper_func(format, args);
+			_putchar(format[i]);
+			count++;
 		}
-		format++;
 	}
+	return (count);
 }

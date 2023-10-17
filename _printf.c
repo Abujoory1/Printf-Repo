@@ -9,18 +9,24 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	va_list args;
+	unsigned int count = 0;
+	operator_func_t function_format_list[] = {
+		{"%", print_percentage},
+		{"c", printf_char},
+		{"s", printf_string},
+		{NULL, NULL},
+	};
+	va_list args_list;
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
 
-	va_start(args, format);
+	va_start(args_list, format);
 
-	printf_helper(format, args);
+	count = printf_helper(format, function_format_list, args_list);
 
-	va_end(args);
+	va_end(args_list);
 	return (count);
 }
