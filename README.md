@@ -1,2 +1,2 @@
 # Printf Project
-  - this is our first project
+  - A project where we practice all the basics of lang.
