@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_integer - Prints an integer
+ * printf_integer - Prints an integer
  * @list: list of arguments
  * Return: Will return the amount of characters printed.
  */
@@ -16,7 +16,7 @@ int printf_integer(va_list list)
 
 
 /**
- * print_number - prints a number send to this function
+ * printf_number - prints a number send to this function
  * @args: List of arguments
  * Return: The number of arguments printed
  */
