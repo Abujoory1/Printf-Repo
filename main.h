@@ -25,7 +25,7 @@ struct operator_func
 typedef struct operator_func op_fun_t;
 
 int _printf(const char *format, ...);
-int printf_helper(const char *format,op_fun_t f_list[], va_list args);
+int printf_helper(const char *format, op_fun_t f_list[], va_list args);
 int printf_string(va_list val);
 int printf_char(va_list val);
 int _strlen(char *s);
