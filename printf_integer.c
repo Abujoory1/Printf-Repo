@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * printf_integer - Prints an integer
- * @list: list of arguments
+ * printf_integer - Prints an integer.
+ * @list: list of arguments.
  * Return: Will return the amount of characters printed.
  */
 
@@ -12,8 +12,8 @@ int printf_integer(va_list list)
 
 	num_length = printf_number(list);
 	return (num_length);
-}
 
+}
 
 /**
  * printf_number - prints a number send to this function
@@ -40,7 +40,7 @@ int printf_number(va_list args)
 	else
 		num = n;
 
-	for (; num / div > 9; )
+	for (; num / div > 9;)
 		div *= 10;
 
 	for (; div != 0; )

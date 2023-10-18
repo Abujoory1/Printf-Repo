@@ -38,7 +38,7 @@ int print_percentage(va_list);
 int printf_integer(va_list);
 int printf_number(va_list args);
 
-
-printf_unsigned_int(va_list list);
+int printf_unsigned_int(va_list list);
+int print_bin(va_list val);
 
 #endif
